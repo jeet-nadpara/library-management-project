@@ -1,0 +1,160 @@
+/* =========================================================
+   Library Management System - Main Stylesheet
+   ========================================================= */
+
+:root {
+  --brand-primary: #2c3e6b;
+  --brand-secondary: #3d5a9e;
+  --brand-accent: #f2a900;
+  --sidebar-width: 240px;
+}
+
+body {
+  background-color: #f4f6fb;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+.main-navbar {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: var(--sidebar-width);
+  min-height: calc(100vh - 56px);
+  flex-shrink: 0;
+  transition: margin-left 0.25s ease-in-out;
+}
+
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.75);
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+}
+
+.sidebar .nav-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.sidebar .nav-link.active {
+  background: var(--brand-accent);
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.main-content {
+  min-height: calc(100vh - 56px);
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    position: fixed;
+    z-index: 1030;
+    top: 56px;
+    left: 0;
+    margin-left: calc(-1 * var(--sidebar-width));
+  }
+  .sidebar.show {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Login Page ---------- */
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-card {
+  max-width: 420px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.login-card .card-header {
+  background: var(--brand-primary);
+  color: #fff;
+  text-align: center;
+  padding: 1.75rem 1rem;
+  border: none;
+}
+
+.login-card .card-header i {
+  font-size: 2.5rem;
+  color: var(--brand-accent);
+}
+
+/* ---------- Dashboard Cards ---------- */
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.stat-card .stat-icon {
+  font-size: 2.8rem;
+  opacity: 0.35;
+  position: absolute;
+  right: 1rem;
+  top: 0.75rem;
+}
+
+.stat-card h2 { font-weight: 700; }
+
+.bg-grad-blue   { background: linear-gradient(135deg,#2c3e6b,#3d5a9e); }
+.bg-grad-green  { background: linear-gradient(135deg,#1e8f5f,#28c76f); }
+.bg-grad-orange { background: linear-gradient(135deg,#c9720a,#f2a900); }
+.bg-grad-red    { background: linear-gradient(135deg,#a11f2b,#e0393e); }
+.bg-grad-purple { background: linear-gradient(135deg,#5b2c8f,#8854d0); }
+
+/* ---------- Tables / Cards ---------- */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.table thead th {
+  background-color: #eef1f8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-status-issued { background-color: #3d5a9e; }
+.badge-status-returned { background-color: #28c76f; }
+.badge-status-overdue { background-color: #e0393e; }
+
+/* Book cover placeholder */
+.book-cover-placeholder {
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg,#2c3e6b,#3d5a9e);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-bottom: 1rem;
+}
